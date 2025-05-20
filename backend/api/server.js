@@ -2,7 +2,7 @@ import express from "express";
 import session from "express-session";
 import passport from "passport";
 import cors from "cors";
-import user from "./models/user.js";
+import user from "../models/user.js";
 
 const app = express();
 const databaseconnection=process.env.MONGO_URL ;
@@ -48,11 +48,11 @@ passport.deserializeUser(async function(id, done) {
 });
 
 // Routes are here
-import authRoutes from "./routes/authentication.js";
+import authRoutes from "../routes/authentication.js";
 // Routes are here
 
 // Database connection done
-import connect from "./database/connection.js";
+import connect from "../database/connection.js";
 connect(databaseconnection);
 // database conneection closed
 
